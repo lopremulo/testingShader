@@ -297,6 +297,7 @@ namespace HSR.NPRShader.Passes
                 CoreUtils.SetKeyword(material, ShaderKeywordStrings.UseRGBM, m_UseRGBM);
 
                 cmd.SetGlobalFloat(PropertyIds._BloomThreshold, m_BloomConfig.Threshold.value);
+                cmd.SetGlobalFloat(PropertyIds._BloomClampMax, m_BloomConfig.Clamp.value);
                 cmd.SetGlobalVectorArray(PropertyIds._BloomUVMinMax, m_BloomAtlasUVMinMax);
 
                 // Prefilter
@@ -407,6 +408,7 @@ namespace HSR.NPRShader.Passes
         private static class PropertyIds
         {
             public static readonly int _BloomThreshold = MemberNameHelpers.ShaderPropertyID();
+            public static readonly int _BloomClampMax = MemberNameHelpers.ShaderPropertyID();
             public static readonly int _BloomUVMinMax = MemberNameHelpers.ShaderPropertyID();
             public static readonly int _BloomUVIndex = MemberNameHelpers.ShaderPropertyID();
             public static readonly int _BloomKernelSize = MemberNameHelpers.ShaderPropertyID();

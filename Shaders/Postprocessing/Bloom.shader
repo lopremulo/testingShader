@@ -52,6 +52,7 @@ Shader "Hidden/Honkai Star Rail/Post Processing/Bloom"
         float4 _BlitTexture_TexelSize;
 
         float _BloomThreshold;
+        float _BloomClampMax;
         float4 _BloomUVMinMax[MAX_MIP_DOWN_BLUR_COUNT];
 
         int _BloomUVIndex;
@@ -100,6 +101,10 @@ Shader "Hidden/Honkai Star Rail/Post Processing/Bloom"
 #endif
 
             float3 color = SAMPLE_TEXTURE2D_X(_BlitTexture, sampler_LinearClamp, uv).rgb;
+
+            // User controlled clamp to limit crazy high broken spec
+            color = min(_BloomClampMax, color);
+
             color = max(0, color - _BloomThreshold.rrr);
             return EncodeHDR(color);
         }

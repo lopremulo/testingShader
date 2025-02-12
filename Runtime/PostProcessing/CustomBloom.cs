@@ -28,11 +28,13 @@ using UnityEngine.Rendering.Universal;
 namespace HSR.NPRShader.PostProcessing
 {
     [Serializable]
+    [HelpURL("https://github.com/stalomeow/StarRailNPRShader/blob/main/README.md")]
     [VolumeComponentMenuForRenderPipeline("Honkai Star Rail/Bloom", typeof(UniversalRenderPipeline))]
     public class CustomBloom : VolumeComponent, IPostProcessComponent
     {
         public MinFloatParameter Intensity = new(0, 0);
         public MinFloatParameter Threshold = new(0.7f, 0);
+        public MinFloatParameter Clamp = new(65472.0f, 0);
         public ColorParameter Tint = new(Color.white, false, false, true);
         public ClampedIntParameter MipDownCount = new(2, 2, 4);
         public BoolParameter CharactersOnly = new(true, BoolParameter.DisplayType.EnumPopup);

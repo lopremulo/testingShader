@@ -27,6 +27,7 @@ using UnityEngine.Rendering.Universal;
 namespace HSR.NPRShader.PostProcessing
 {
     [Serializable]
+    [HelpURL("https://github.com/stalomeow/StarRailNPRShader/blob/main/README.md")]
     [VolumeComponentMenuForRenderPipeline("Honkai Star Rail/Tonemapping", typeof(UniversalRenderPipeline))]
     public class CustomTonemapping : VolumeComponent, IPostProcessComponent
     {

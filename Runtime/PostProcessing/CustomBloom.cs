@@ -28,7 +28,7 @@ using UnityEngine.Rendering.Universal;
 namespace HSR.NPRShader.PostProcessing
 {
     [Serializable]
-    [HelpURL("https://github.com/stalomeow/StarRailNPRShader/blob/main/README.md")]
+    [HelpURL("https://srshader.stalomeow.com/")]
     [VolumeComponentMenuForRenderPipeline("Honkai Star Rail/Bloom", typeof(UniversalRenderPipeline))]
     public class CustomBloom : VolumeComponent, IPostProcessComponent
     {
